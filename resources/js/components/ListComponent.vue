@@ -1,0 +1,28 @@
+<template>
+  <ul class="list">
+    <li v-for="(item, index) in listdata" :key="index">
+      <input type="checkbox" :id="'list' + index" v-model="item.status" />
+      <label :class="item.status ? 'done' : ''">{{ item.title }}</label>
+      <button-form textlabel="Hapus" @emit-click="deleteList(index)" stylecustom="transparent"/>
+    </li>
+  </ul>
+</template>
+
+<script>
+export default {
+  emits: ['emit-delete'],
+  props:{
+    listdata: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    }
+  },
+  methods:{
+    deleteList(index){
+      this.$emit("emit-delete", index)
+    }
+  }
+}
+</script>
