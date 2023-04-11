@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h1>To Do</h1>
     <input-form @emit-submit="addList" />
     <list :listdata="list" @emit-delete="deleteList"/>
   </div>

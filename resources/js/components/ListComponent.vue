@@ -3,17 +3,17 @@
     <li v-for="(item, index) in listdata" :key="index">
       <input type="checkbox" :id="'list' + index" v-model="item.status" />
       <label :class="item.status ? 'done' : ''">{{ item.title }}</label>
-      <button-form textlabel="Hapus" @emit-click="deleteList(index)" stylecustom="transparent"/>
+      <button-form @emit-click="deleteList(index)" color="transparent" text="Hapus"/>
     </li>
   </ul>
 </template>
 
 <script>
 export default {
-  emits: ['emit-delete'],
+  emits:['emit-delete'],
   props:{
-    listdata: {
-      type: Array,
+    listdata:{
+      type:Array,
       default: () => {
         return []
       }
@@ -21,7 +21,7 @@ export default {
   },
   methods:{
     deleteList(index){
-      this.$emit("emit-delete", index)
+      this.$emit('emit-delete', index)
     }
   }
 }

@@ -1,28 +1,23 @@
 <template>
-  <button type="button" 
-    @click="functionClick" 
-    :class="stylecustom"
-  >
-    {{ textlabel }}
-  </button>
+  <button type="button" @click="functionClick" :class="color">{{ text }}</button>
 </template>
 
 <script>
 export default {
-  emits: ['emit-click'],
+  emits:['emit-click'],
   props:{
-    textlabel:{
-      type: String,
-      default: "Label"
-    },
-    stylecustom:{
-      type: String,
+    text:{
+      type:String,
       default: ""
     },
+    color:{
+      type:String,
+      default:""
+    }
   },
   methods:{
     functionClick(){
-      this.$emit("emit-click")
+      this.$emit('emit-click')
     }
   }
 }
