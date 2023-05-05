@@ -1,7 +1,7 @@
 <template>
   <div class="form">
-    <input type="text" v-model="inputform">
-    <button-form @emit-click="reset" color="blue" text="Reset"/>
+    <input type="text" v-model="inputform"> &nbsp;
+    <button-form @emit-click="reset" color="blue" text="Reset"/> &nbsp;
     <button-form @emit-click="addList" text="Submit"/>
   </div>
 </template>
