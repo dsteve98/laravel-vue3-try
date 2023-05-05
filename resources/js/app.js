@@ -6,6 +6,7 @@
 
 import './bootstrap';
 import { createApp } from 'vue';
+import store from './store'
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -16,14 +17,15 @@ import { createApp } from 'vue';
 const app = createApp({});
 
 import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
 import ToDoComponent from './components/ToDoComponent.vue';
-app.component('to-do', ToDoComponent);
 import InputFormComponent from './components/InputFormComponent.vue';
-app.component('input-form', InputFormComponent);
 import ButtonComponent from './components/ButtonComponent.vue';
-app.component('buttonForm', ButtonComponent);
 import ListComponent from './components/ListComponent.vue';
+
+app.component('example-component', ExampleComponent);
+app.component('to-do', ToDoComponent);
+app.component('input-form', InputFormComponent);
+app.component('buttonForm', ButtonComponent);
 app.component('list', ListComponent);
 
 /**
@@ -44,4 +46,4 @@ app.component('list', ListComponent);
  * scaffolding. Otherwise, you will need to add an element yourself.
  */
 
-app.mount('#app');
+app.use(store).mount('#app');
